@@ -1,0 +1,24 @@
+{
+  "name": "react-native-customizable-actionsheet",
+  "version": "1.0.0",
+  "description": "a customizable actionsheet , you will love it",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxfriday/react-native-customizable-actionsheet.git"
+  },
+  "keywords": [
+    "actionsheet",
+    "action-sheet",
+    "customizable"
+  ],
+  "author": "lxfriday",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lxfriday/react-native-customizable-actionsheet/issues"
+  },
+  "homepage": "https://github.com/lxfriday/react-native-customizable-actionsheet#readme"
+}
