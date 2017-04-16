@@ -2,9 +2,9 @@
 
 ## demo
 
-|default|with titlw|customize title|customize items|
+|default|customize title|customize items|
 |-------|----------|---------------|---------------|
-|||||
+|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=300 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=300 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=300 />|
 
 ### 有title
 
@@ -28,22 +28,30 @@
 
 // customize items
 import {Icon as IconElement} from 'react-native-elements';
+import Communications from 'react-native-communications';
 <ActionSheet
   title={'电话'}
   ref={ref => this.actionsheet = ref}
   buttonComponents={<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}><IconElement name='call' size={50} color='red' raised reverse/></View>}
 />
 
+// actionSheetFuncs: [() => Communications.phonecall(phone, true), () =>  Communications.text(phone), () => {Clipboard.setString(phone);this.actionsheet.hide();} ],
+// actionSheetActions: [<View style={{flexDirection: 'row'}}><IconElement name='call' color='blue' size={15}/><Text>{phone}</Text></View>, '发短信给' + phone, '复制号码' ],
+
 ```
 
 ### API
 |Property|Type|Default|Description|
-|--------|----|-------|-----------|
-|funcs|array of function|[]|function|
-|actions|arrayof (React.Component or string)|[]|item title|
-|title|React.Component or string|''|top title|
-|buttonShows|number|6|number of items to show|
-|buttonHeight|number|50|item height|
-|buttonComponents|React.Component|null|customize it youself|
+|:-------|:---|:------|:----------|
+|funcs|array of `function`|`[]`|function|
+|actions|arrayof (`React.Component` or `string`)|`[]`|item title name|
+|title|`React.Component` or `string`|`''`|top title|
+|buttonShows|`number`|`6`|number of items to show|
+|buttonHeight|`number`|`50`|item height|
+|buttonComponents|`React.Component`|`null`|customize it youself|
+
+# You Can Enjoy customization
+
+# [License](https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/LICENSE)
 
 
