@@ -1,13 +1,12 @@
 # react-native-customizable-actionsheet
 
-## Demos
+## Demos 
 
 |default|customize title|customize items|
-|-------|----------|---------------|---------------|
+|-------|----------|---------------|
 |<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
 
-### 有title
-
+## Code
 ``` javascript
 // customize the title 
 <ActionSheet
@@ -40,7 +39,7 @@ import Communications from 'react-native-communications';
 
 ```
 
-### API
+## API
 |Property|Type|Default|Description|
 |:-------|:---|:------|:----------|
 |funcs|array of `function`|`[]`|function|
@@ -50,8 +49,8 @@ import Communications from 'react-native-communications';
 |buttonHeight|`number`|`50`|item height|
 |buttonComponents|`React.Component`|`null`|customize it youself|
 
-# You Can Enjoy Customization
+## You Can Enjoy Customization
 
-# [License](https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/LICENSE)
+## [License](https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/LICENSE)
 
 
