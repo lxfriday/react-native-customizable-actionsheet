@@ -6,7 +6,7 @@
 |-------|-------|----------|---------------|
 |<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/notitle.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
 
-<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.gif?raw=true" width=250 />
+<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/actionsheet.gif?raw=true" width=250 />
 
 ## Code
 ```js
