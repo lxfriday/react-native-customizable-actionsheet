@@ -8,7 +8,7 @@
 
 ### 有title
 
-```javascript
+``` javascript
 // customize the title 
 <ActionSheet
   title={<IconElement name='call' size={15} color='red'/>}
@@ -50,7 +50,7 @@ import Communications from 'react-native-communications';
 |buttonHeight|`number`|`50`|item height|
 |buttonComponents|`React.Component`|`null`|customize it youself|
 
-# You Can Enjoy customization
+# You Can Enjoy Customization
 
 # [License](https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/LICENSE)
 
