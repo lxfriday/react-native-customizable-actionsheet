@@ -7,7 +7,7 @@
 |<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
 
 ## Code
-``` javascript
+```js
 // customize the title 
 <ActionSheet
   title={<IconElement name='call' size={15} color='red'/>}
@@ -42,12 +42,12 @@ import Communications from 'react-native-communications';
 ## API
 |Property|Type|Default|Description|
 |:-------|:---|:------|:----------|
-|funcs|array of `function`|`[]`|function|
-|actions|arrayof (`React.Component` or `string`)|`[]`|item title name|
-|title|`React.Component` or `string`|`''`|top title|
-|buttonShows|`number`|`6`|number of items to show|
-|buttonHeight|`number`|`50`|item height|
-|buttonComponents|`React.Component`|`null`|customize it youself|
+|`funcs`|array of `function`|`[]`|function|
+|`actions`|arrayof (`React.Component` or `string`)|`[]`|item title name|
+|`title`|`React.Component` or `string`|`''`|top title|
+|`buttonShows`|`number`|`6`|number of items to show|
+|`buttonHeight`|`number`|`50`|item height|
+|`buttonComponents`|`React.Component`|`null`|customize it youself|
 
 ## You Can Enjoy Customization
 
