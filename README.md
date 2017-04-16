@@ -2,12 +2,19 @@
 
 ## Demos 
 
-|default|customize title|customize items|
-|-------|----------|---------------|
-|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
+|default|notitle|customize title|customize items|
+|-------|-------|----------|---------------|
+|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/notitle.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
 
 ## Code
 ```js
+// notitle
+<ActionSheet
+  ref={ref => this.actionsheet = ref}
+  funcs={actionSheetFuncs}
+  actions={actionSheetActions}
+/>
+
 // customize the title 
 <ActionSheet
   title={<IconElement name='call' size={15} color='red'/>}
