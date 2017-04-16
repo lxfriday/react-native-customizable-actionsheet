@@ -101,8 +101,6 @@ export default class ReactNativeActionSheet extends Component {
   }
   
   render() {
-    // translateY = BUTTON_HEIGHT * TITLES.length + 34;
-    console.log(this.translateY)
     const {
       sheetAnim,
       shown
