@@ -2,7 +2,7 @@
 
 ## Demos 
 
-|default|notitle|customize title|customize items|
+|default|notitle|customize title or item|customize items|
 |-------|-------|----------|---------------|
 |<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/default.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/notitle.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_title_item.png?raw=true" width=250 />|<img src="https://github.com/lxfriday/react-native-customizable-actionsheet/blob/master/img/customize_items.png?raw=true" width=250 />|
 
