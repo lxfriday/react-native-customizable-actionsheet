@@ -1,6 +1,6 @@
 # react-native-customizable-actionsheet
 
-## demo
+## Demos
 
 |default|customize title|customize items|
 |-------|----------|---------------|---------------|
