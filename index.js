@@ -79,7 +79,7 @@ export default class ReactNativeCustomizableActionSheet extends Component {
           key={i}
           background={TouchableNativeFeedback.Ripple('#108eeb', false)}
         >
-          <View style={{height: buttonHeight, justifyContent: 'center', alignItems: 'center', borderBottomWidth: MIN_WIDTH, borderColor: '#ccc', backgroundColor: '#eee'}}>
+          <View style={{height: buttonHeight, justifyContent: 'center', alignItems: 'center', borderBottomWidth: MIN_WIDTH, borderColor: '#ccc', backgroundColor: '#fff'}}>
             {typeof val === 'string'?
               <Text style={{color: '#000', fontSize: 16}}>{val}</Text>
             :
@@ -95,7 +95,7 @@ export default class ReactNativeCustomizableActionSheet extends Component {
   _renderTitle = () => {
     const {title} = this.props;
     return title.length === 0 ?null:(
-      <View style={{paddingTop: 8, paddingBottom: 8, alignItems: 'center', borderBottomWidth: MIN_WIDTH, borderColor: '#ccc',}}>
+      <View style={{justifyContent: 'center', alignItems: 'center', height: 34, borderBottomWidth: MIN_WIDTH, borderColor: '#ccc', backgroundColor: '#fff'}}>
         {typeof title === 'string'?
           <Text style={{fontSize: 13, color: '#777'}}>{title}</Text>
         :
@@ -118,7 +118,7 @@ export default class ReactNativeCustomizableActionSheet extends Component {
       actions,
       title
     } = this.props;
-    const titleHeight = title.length === 0? 0: 34;
+    const titleHeight = title.length === 0? 0: 34;//only '' will be 0, React.Component OR string will be 34
     let buttonsItemHeight = 0;
     if(!buttonComponents) {
       buttonsItemHeight = buttonHeight * (actions.length >= buttonShows? buttonShows:actions.length);
@@ -138,13 +138,13 @@ export default class ReactNativeCustomizableActionSheet extends Component {
           {/* 遮挡的overlay */}
           <Text onPress={this._toggle} style={{position: 'absolute', top: 0, right: 0, bottom: 0, left: 0}}/>
           <Animated.View
-            style={{height: this.translateY, flex: 1, alignSelf: 'flex-end', borderTopWidth: MIN_WIDTH, borderColor: '#ccc', backgroundColor: '#eee', transform: [{translateY: sheetAnim}] }}
+            style={{height: this.translateY, flex: 1, alignSelf: 'flex-end', borderTopWidth: MIN_WIDTH, borderColor: '#ccc', transform: [{translateY: sheetAnim}] }}
           >
             {this._renderTitle()}
             {buttonComponents?
               buttonComponents
               :
-              <ScrollView  showsVerticalScrollIndicator={false}>
+              <ScrollView contentContainerStyle={{backgroundColor: '#fff'}} showsVerticalScrollIndicator={false}>
                 {this._renderButton()}
               </ScrollView>
             }
