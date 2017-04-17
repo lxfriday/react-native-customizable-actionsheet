@@ -11,12 +11,13 @@ import {
   PixelRatio,
   ScrollView,
   Dimensions,
-  Modal
+  Modal,
+  Easing
 } from 'react-native';
 const MIN_WIDTH = 1/PixelRatio.get();
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
-export default class ReactNativeActionSheet extends Component {
+export default class ReactNativeCustomizableActionSheet extends Component {
   constructor(props) {
     super(props);
 
@@ -28,9 +29,11 @@ export default class ReactNativeActionSheet extends Component {
   
   // hide
   hide = () => {
+    const {animationType} = this.props;
     Animated.timing(this.state.sheetAnim, {
       toValue: this.translateY,
-      duration: 300
+      duration: 300,
+      easing: animationType
     }).start(this._toggleShown);//这个函数必须放到start里面，否则没有动画效果
   }
   
@@ -41,9 +44,11 @@ export default class ReactNativeActionSheet extends Component {
   }
 
   _showSheet = () => {
+    const {animationType} = this.props;
     Animated.timing(this.state.sheetAnim, {
       toValue: 0,
-      duration: 300
+      duration: 300,
+      easing: animationType
     }).start();
   }
 
@@ -106,13 +111,22 @@ export default class ReactNativeActionSheet extends Component {
       shown
     } = this.state;
     const {
-      buttonCompoents,
+      buttonComponentsHeight,
+      buttonComponents,
       buttonHeight,
       buttonShows,
       actions,
       title
     } = this.props;
-    this.translateY = buttonHeight * (actions.length >= buttonShows? buttonShows:actions.length) + (title.length === 0?0:34);
+    const titleHeight = title.length === 0? 0: 34;
+    let buttonsItemHeight = 0;
+    if(!buttonComponents) {
+      buttonsItemHeight = buttonHeight * (actions.length >= buttonShows? buttonShows:actions.length);
+    }
+    else {
+      buttonsItemHeight = buttonComponentsHeight;
+    }
+    this.translateY = buttonsItemHeight + titleHeight;
     return (
       <Modal
         animationType='fade'
@@ -127,13 +141,13 @@ export default class ReactNativeActionSheet extends Component {
             style={{height: this.translateY, flex: 1, alignSelf: 'flex-end', borderTopWidth: MIN_WIDTH, borderColor: '#ccc', backgroundColor: '#eee', transform: [{translateY: sheetAnim}] }}
           >
             {this._renderTitle()}
-            <ScrollView showsVerticalScrollIndicator={false}>
-            {buttonCompoents?
-              buttonCompoents
+            {buttonComponents?
+              buttonComponents
               :
-              this._renderButton()
+              <ScrollView  showsVerticalScrollIndicator={false}>
+                {this._renderButton()}
+              </ScrollView>
             }
-            </ScrollView>
           </Animated.View>
         </View>
       </Modal>
@@ -141,26 +155,30 @@ export default class ReactNativeActionSheet extends Component {
   }
 }
 
-ReactNativeActionSheet.defaultProps = {
-  funcs: [],//对应的条目的函数  -> required
-  actions: [],//操作名 -> required
-  title: '',//ActionSheet的标题名  -> optional
+ReactNativeCustomizableActionSheet.defaultProps = {
+  funcs: [],//对应的条目的函数
+  actions: [],//操作名
+  title: '',//ActionSheet的标题名
   buttonShows: 6,//展示的button的个数
   buttonHeight: 50,//单个item的高度
-  buttonCompoents: null,//自己定制
+  buttonComponents: null,//自己定制
+  buttonComponentsHeight: 150,//自己定制的时候的actionsheet高度
+  animationType: Easing.elastic(1),//动画类型
 };
-ReactNativeActionSheet.propTypes = {
-  funcs: PropTypes.arrayOf(PropTypes.func).isRequired,
+ReactNativeCustomizableActionSheet.propTypes = {
+  funcs: PropTypes.arrayOf(PropTypes.func),
   actions: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
-  ])).isRequired,
+  ])),
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
   ]),
   buttonShows: PropTypes.number,
   buttonHeight: PropTypes.number,
-  buttonCompoents: PropTypes.node
+  buttonComponents: PropTypes.element,
+  buttonComponentsHeight: PropTypes.number,
+  animationType: PropTypes.any,
 };
 

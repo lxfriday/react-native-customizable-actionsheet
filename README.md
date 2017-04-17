@@ -56,7 +56,11 @@ import Communications from 'react-native-communications';
 |`title`|`React.Component` or `string`|`''`|top title|
 |`buttonShows`|`number`|`6`|number of items to show|
 |`buttonHeight`|`number`|`50`|item height|
-|`buttonComponents`|`React.Component`|`null`|customize it youself|
+|`buttonComponents`|`React.Component`|`null`|customize it youself **when set, actions and funcs will be useless**|
+|`buttonComponentsHeight`|`number`|`150`|buttonComponentsHeight use with buttonComponents|
+|`animationType`|[Easing](http://facebook.github.io/react-native/docs/easing.html)|`Easing.elastic(1)`|Animated.timing(v,{easing: `animationType`})|
+
+
 
 ## You Can Enjoy Customization
 
